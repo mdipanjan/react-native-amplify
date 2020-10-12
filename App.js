@@ -15,6 +15,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import Appcontainer from './src/AppNavigator';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
@@ -22,13 +23,11 @@ import {withAuthenticator} from 'aws-amplify-react-native';
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Text>dfgfg</Text>
-      </SafeAreaView>
-    </>
+    <SafeAreaView style={{flex: 1}}>
+      <Appcontainer />
+    </SafeAreaView>
   );
 };
 
-export default withAuthenticator(App);
+// https://medium.com/javascript-in-plain-english/the-ultimate-guide-for-integrate-aws-amplify-authentication-for-react-native-15a8eec10890
+export default App;
