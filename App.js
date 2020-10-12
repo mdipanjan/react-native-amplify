@@ -15,6 +15,10 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
+import {withAuthenticator} from 'aws-amplify-react-native';
 
 const App = () => {
   return (
@@ -27,4 +31,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default withAuthenticator(App);
